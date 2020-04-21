@@ -1,0 +1,19 @@
+<ion-grid>
+  <ion-row>
+    <ion-col text-left>
+      <ion-button color="success" (click)="up()">
+        <ion-icon name="thumbs-up"></ion-icon>
+        {{ upButton }}
+      </ion-button>  
+      <ion-button color="danger" (click)="down()">
+        <ion-icon name="thumbs-down"></ion-icon>
+        {{ downButton }}
+      </ion-button> 
+    </ion-col>
+  </ion-row>
+  <ion-row>
+    <ion-col>
+      <p>{{ avarageCalculate() }} / 10</p>
+    </ion-col>
+  </ion-row>
+</ion-grid>

@@ -1,0 +1,45 @@
+<ion-header [translucent]="true">
+  <ion-toolbar color="primary">
+    <ion-buttons slot="start">
+      <ion-menu-button></ion-menu-button>
+    </ion-buttons>
+    <ion-title>Sandbox</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-title class="ion-padding-top">Expandable contents</ion-title>
+  <app-expandable-content title='Title 1' (toogleE)="countExpandible($event)">Content 1</app-expandable-content>
+  <app-expandable-content title='Title 2' (toogleE)="countExpandible($event)">Content 2</app-expandable-content>
+  <app-expandable-content title='Title 3' (toogleE)="countExpandible($event)">Content 3</app-expandable-content>
+  <app-expandable-content title='Title 4' (toogleE)="countExpandible($event)">Content 4</app-expandable-content>
+  <ion-row>
+    <ion-col>
+      <p>Number: {{ count }}</p>
+    </ion-col>
+  </ion-row>
+  <ion-title class="ion-padding-top">Ratings</ion-title>
+
+  <app-rating 
+    (sumUp)="sumUp($event)"
+    (sumDown)="sumDown($event)"
+  ></app-rating>
+  <app-rating 
+    [ups]="1" 
+    (sumUp)="sumUp($event)"
+    (sumDown)="sumDown($event)"
+  ></app-rating>
+  <app-rating 
+    [downs]="2" 
+    (sumUp)="sumUp($event)"
+    (sumDown)="sumDown($event)"
+  ></app-rating>
+  <app-rating 
+    [ups]="3" 
+    [downs]="1" 
+    (sumUp)="sumUp($event)"
+    (sumDown)="sumDown($event)"
+  ></app-rating>
+  <p>Up votes sum: {{ upVotesSum }} </p>
+  <p>Down votes sum: {{ downVotesSum }} </p>
+</ion-content>
